@@ -6,7 +6,8 @@ from myapp.forms import BookingForm
 
 # Create your views here.
 def home(request):
-    return HttpResponse('<h1> Welcome to Little Lemon! </h1> ')
+    # Render the 'home.html' template
+    return render(request, 'home.html')
 
 def about (request):  
     return HttpResponse('<h1> About us </h1> ')

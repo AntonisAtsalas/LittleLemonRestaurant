@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon Restaurant</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+    <!-- Add your CSS stylesheets and external libraries here -->
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Fixed navigation bar styles */
+        nav {
+            background-color: #000; /* Black background color */
+            opacity: 1; /* Full opacity when on top */
+            color: white; /* Text color */
+            position: fixed; /* Make the navbar fixed at the top */
+            width: 100%; /* Full-width */
+            top: 0; /* Position at the top */
+            z-index: 100; /* Ensure it's on top of other elements */
+            transition: background-color 0.3s, opacity 0.3s; /* Add transition effects */
+            height: 50px; /* Set the height of the navbar to half its actual size */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: -100;
+            display: flex;
+            justify-content: space-around; /* Distribute items evenly */
+            align-items: center; /* Vertically center items */
+            height: 100%; /* Set the height of the navbar */
+        }
+
+        nav li {
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Resize the logo to fit the navbar height */
+        nav img {
+            height: 100%; /* Set the height to 100% of the navbar */
+            max-width: 150px; /* Limit the width to 150px */
+        }
+
+        /* Content below the navbar */
+        .content {
+            margin-top: 50px; /* Ensure content starts below the navbar */
+        }
+
+        /* Change navbar background and opacity on scroll */
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background when scrolling */
+            opacity: 0.5; /* Reduced opacity when scrolling */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <img src="{% static 'nav-logo.png' %}" alt="Little Lemon Restaurant">
+        <ul>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content below the navbar -->
+    <div class="content">
+        <!-- Hero Section -->
+        <section id="hero">
+            <div>
+                <h1>Welcome to Little Lemon Restaurant</h1>
+                <p>Discover the finest culinary experience in town.</p>
+                <a href="#reservations" class="cta-button">Make a Reservation</a>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <!-- Add menu items here -->
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Your Restaurant Name is dedicated to providing...</p>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>What Our Customers Say</h2>
+            <!-- Add customer testimonials here -->
+        </section>
+
+        <!-- Reservation Section -->
+        <section id="reservations">
+            <h2>Make a Reservation</h2>
+            <!-- Add reservation form here -->
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <!-- Add contact information and form here -->
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2023 Little Lemon Restaurant. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Add your JavaScript scripts and libraries here -->
+
+    <!-- JavaScript to handle the navbar scrolling effect -->
+    <script>
+        // Function to handle the scrolling effect
+        function handleScroll() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Attach the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Call the function once to set the initial state
+        handleScroll();
+    </script>
+</body>
+</html>

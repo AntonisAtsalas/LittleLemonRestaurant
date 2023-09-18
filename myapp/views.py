@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Menu
 
 from myapp.forms import BookingForm
 
@@ -10,10 +11,21 @@ def home(request):
     return render(request, 'home.html')
 
 def about (request):  
-    return HttpResponse('<h1> About us </h1> ')
+    about_content = {'about':'Welcome to Little Lemon Restaurant, a culinary gem nestled in the heart of the beautiful region of Chalkidiki. Our restaurant is a tribute to the art of gastronomy and the flavors that have defined this picturesque corner of Greece.'}
+    return render(request,'about.html', about_content)
 
-def menu (request):  
-    return HttpResponse('<h1> Menu for Little Lemon </h1> ')
+def menu(request):
+    menu_items = [
+        {'name': 'Greek Salad', 'price': '12$'},
+        {'name': 'Gyros', 'price': '8$'},
+        {'name': 'Bouyiourdi', 'price': '6$'}
+    ]
+    completemenu = {'menu_items': menu_items}
+    return render(request, 'menu.html', {'completemenu':completemenu})
+
+def menu_by_id(request):
+    newmenu = Menu.objects.all()
+    return render(request, 'menucards.html', {'menu': newmenu})
 
 def book (request):  
     return HttpResponse('<h1> Make a booking. </h1> ')

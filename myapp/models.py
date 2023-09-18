@@ -7,14 +7,10 @@ class MenuCategory(models.Model):
 
 class Menu(models.Model):
     name = models.CharField(max_length=100)
-    cuisine = models.CharField(max_length=100)
     price  = models.IntegerField(null=False)
-    category_id = models.ForeignKey(MenuCategory, on_delete=models.PROTECT, null=True, related_name='category_name')
-
-
-
+    
     def __str__(self):
-        return self.name + ':' + self.cuisine
+        return self.name 
 
 class Courses(models.Model):
     itemname = models.CharField(max_length=200)

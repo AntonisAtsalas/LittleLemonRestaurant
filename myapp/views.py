@@ -8,7 +8,7 @@ from myapp.forms import BookingForm
 # Create your views here.
 def home(request):
     # Render the 'home.html' template
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 def about (request):  
     about_content = {'about':'Welcome to Little Lemon Restaurant, a culinary gem nestled in the heart of the beautiful region of Chalkidiki. Our restaurant is a tribute to the art of gastronomy and the flavors that have defined this picturesque corner of Greece.'}

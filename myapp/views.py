@@ -15,7 +15,7 @@ def about (request):
     return render(request,'about.html', about_content)
 
 def menu(request):
-    menu_data = Menu.objects.all()
+    menu_data = Menu.objects.all().order_by('name')  # Order by name
     main_data = {"menu": menu_data}
     return render(request, 'menu.html', {"menu": main_data})
 

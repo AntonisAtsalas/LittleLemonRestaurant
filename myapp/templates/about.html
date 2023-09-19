@@ -1,61 +1,60 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Lemon Restaurant</title>
-    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif; /* Use your desired font-family */
-        }
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <article>
+    <h1>About Us</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <p>
+          Based in Chicago, Illinois, Little Lemon is a family owned
+          Mediterranean restaurant, focused on traditional recipes served with a
+          modern twist.
+        </p>
+        <p>
+          The chefs draw inspiration from Italian, Greek, and Turkish culture
+          and have a menu of 12-15 items that they rotate seasonally.
+        </p>
 
-        nav {
-            background-color: black;
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            color: white;
-        }
+        <p>
+          The restaurant has a rustic and relaxed atmosphere with moderate
+          prices, making it a popular place for a meal any time of the day.
+        </p>
 
-        nav img {
-            height: 40px; /* Adjust the height as needed */
-            margin-right: 760px; /* Add some space between the logo and the links */
-            background-color: black;
-        }
+        <p>
+          Little Lemon is owned by two Italian brothers, Mario and Adrian, who
+          moved to the United States to pursue their shared dream of owning a
+          restaurant.
+        </p>
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+        <p>
+          To craft the menu, Mario relies on family recipes and his experience
+          as a chef in Italy.
+        </p>
 
-        nav li {
-            margin: 0 20px; /* Adjust the margin as needed */
-        }
+        <p>
+          Adrian does all the marketing for the restaurant and led the effort to
+          expand the menu beyond classic Italian to incorporate additional
+          cuisines from the mediterranean region.
+        </p>
+      </div>
+      <!--End col-->
 
-        nav a {
-            text-decoration: none;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <img src="{% static 'nav-logo.png' %}" alt="Little Lemon Restaurant Logo">
-        <ul>
-            <li><a href='home'>Home</a></li>
-            <li><a href="menu">Menu</a></li>
-            <li><a href="book">Book</a></li>
-            <li><a href="about">About</a></li>
-        </ul>
-    </nav>
-
-  <h2>About</h2>
-  {{about}}
-</body>
-</html>
+      <!--Begin col-->
+      <div class="column">
+        <figure class="figure">
+          <img
+            src="{% static 'mario-and-adrian.jpg' %}"
+            alt="Mario and Adrian"
+          />
+          <figcaption class="figure-caption">
+            Little Lemon owners Mario and Adrian.
+          </figcaption>
+        </figure>
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+  </article>
+</section>
+{% endblock %}

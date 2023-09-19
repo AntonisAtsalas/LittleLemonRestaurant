@@ -8,6 +8,7 @@ class MenuCategory(models.Model):
 class Menu(models.Model):
     name = models.CharField(max_length=100)
     price  = models.IntegerField(null=False)
+    description = models.CharField(max_length=200,default='')
     
     def __str__(self):
         return self.name 

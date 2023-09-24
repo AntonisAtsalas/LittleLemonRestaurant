@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.widgets import NumberInput
-from .models import Logger, Booking
+from .models import Booking
 
 class DemoForm(forms.Form):
     name = forms.CharField(widget=forms.Textarea(attrs={'rows':2}))
@@ -12,11 +12,6 @@ class ApplicationForm(forms.Form):
     address = forms.CharField(label='Address', max_length=100) 
     posts = (('Manager', 'Manager'),('Cashier', 'Cashier'),('Operator', 'Operator')) 
     field = forms.ChoiceField(choices=posts) 
-
-class LogForm(forms.ModelForm):
-    class Meta:
-        model = Logger
-        fields = '__all__'
 
 class BookingForm(forms.ModelForm):
     class Meta:

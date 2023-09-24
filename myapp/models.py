@@ -13,15 +13,6 @@ class Menu(models.Model):
     def __str__(self):
         return self.name 
 
-class Courses(models.Model):
-    itemname = models.CharField(max_length=200)
-    category = models.CharField(max_length=300)
-    year  = models.IntegerField()
-
-class Logger(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)  
-    time_log = models.TimeField()
 
 class Booking(models.Model):
     first_name = models.CharField(max_length=50)
@@ -42,6 +33,16 @@ class Reservation(models.Model):
 
     def __str__(self):
         return self.name
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author  =  models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    class Meta:
+        indexes = models.Index(fields=['price']),
+
+    def __str__(self):
+        return self.name   
 
 
 

@@ -1,6 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Menu
+from django.http import HttpResponse, JsonResponse
+from .models import Menu, Book
+from django.db import IntegrityError
+from django.views.decorators.csrf import csrf_exempt
+from django.forms.models import model_to_dict
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.decorators import api_view
 
 from myapp.forms import BookingForm
 
@@ -38,3 +44,8 @@ def display_menu_item(request, pk=None):
     else: 
         menu_item = "" 
     return render(request, 'menu_item.html', {"menu_item": menu_item}) 
+
+@api_view(['GET','POST'])
+def books(request):
+    response_data = {'message': 'List of books'}
+    return Response(response_data, status=status.HTTP_200_OK)

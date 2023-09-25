@@ -39,10 +39,10 @@ class Book(models.Model):
     author  =  models.CharField(max_length=100)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     class Meta:
-        indexes = models.Index(fields=['price']),
-
-    def __str__(self):
-        return self.name   
+        indexes = [ 
+            models.Index(fields=['price']),
+        ]
+      
 
 
 
